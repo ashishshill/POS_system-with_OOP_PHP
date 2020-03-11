@@ -1,0 +1,7 @@
+1.Stock alert with product availability less than 100
+
+(SELECT p.pdName, b.branchName FROM tbl_inventory AS p , tbl_branch AS b WHERE p.branchId = b.branchId and p.availability < 100 )
+
+2. Get duelist by Branch
+
+(SELECT * FROM tbl_sales as s, tbl_order as o, tbl_inventory as p , tbl_branch as b WHERE  s.id = o.sale AND o.inventId = p.inventId AND p.branchId = b.branchId AND rem <= 0)
